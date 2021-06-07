@@ -1,0 +1,38 @@
+ 
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+{% load static %}
+<main class="main">
+    <div class="profile">
+        <div class="profile__image">
+            <img src="{% static 'portfolio/IMG-6051.jpg' %}" alt="Muthu's picture" class="profile__image--item">
+        </div>
+        <div class="profile__about">
+            <h1 class="profile__about--item">Muthu - Loves to travel and explore! Currently lives in Pleasanton, California!</h1>
+        </div>
+        
+    </div>
+    <section class="portfolio">
+        <h1>Portfolio</h1>
+        <hr>
+        <article>
+            <div class="row">
+                {% for project in projects %}
+                <div class="col-lg-4 col-md-6">
+                    {%if project.url %}
+                        <a href="{{project.url}}" target="_blank">
+                            <img src="{{project.image.url}}" alt="project image" class="img-fluid mb-2">
+                        </a>
+                    {%else%}
+                    <img src="{{project.image.url}}" alt="project image" class="img-fluid mb-2">
+                    {% endif %}
+                    <h2>{{project.title}}</h2> 
+                    <p>{{project.description}}</p><br>
+                </div>
+                {% endfor %}
+            </div>
+        </article>
+    </section>
+</main>
+{%endblock%}

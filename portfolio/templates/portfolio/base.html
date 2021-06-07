@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+     
+     <link rel="stylesheet" href="{% static 'portfolio/styles.css' %}">
+     <link rel="icon" type="image/png" href="{% static 'portfolio/logo_muthu.png' %}">
+    <title>Muthuprabhu</title>
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="navbar__brand">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'portfolio/logo_muthu.png' %}" alt="The logo" height="40" width="40" class="navbar__logo">
+            </a>
+            <span>Muthuprabhu</span>                        
+        </div>
+        <ul class="navbar__navigation">
+            <li class="navbar__navigation--item">
+                <a href="https://www.linkedin.com/in/muthuprabhu-kuppusamy-7a704528/" class="navbar__link" target="_blank">LinkedIn</a>
+            </li>
+            <li class="navbar__navigation--item">
+                <a href="https://twitter.com/muthuprabhuk" class="navbar__link" target="_blank">Twitter</a>
+            </li>
+            <li class="navbar__navigation--item">
+                <a href="{% static 'portfolio/Muthuprabhu Kuppusamy.pdf' %}" target="_blank" class="navbar__link">Resume</a>
+            </li>
+            <li class="navbar__navigation--item">
+                <a role="button" href="{% url 'blog:all_blog' %}" class="btn btn-primary">Blog</a>
+            </li>
+        </ul>
+        
+    </header>
+    {% block content %}
+    {%endblock%}
+</body>
+</html>
